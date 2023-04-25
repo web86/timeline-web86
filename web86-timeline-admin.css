@@ -1,0 +1,43 @@
+#timeline-web86 .repeatable-fieldset {
+    margin-bottom:25px;
+    border:1px solid #ccc;
+    border-radius:7px;
+    padding:10px;
+    background:#f1f1f1;
+}
+#timeline-web86 .mainlabel {
+    font-size:18px;
+    display:block;
+}
+#timeline-web86 .subfields-container {
+    background:#ccc;
+    margin-top:10px;
+    border-radius:5px;
+}
+#timeline-web86 .subfield-container {
+    padding:10px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    gap:5px;
+    margin-bottom:10px;
+}
+#timeline-web86 .remove-sub-field-row, #timeline-web86 .remove-row {
+    background:rgb(252, 146, 146)
+}
+#timeline-web86 .add-subfield-row, #timeline-web86 .add-row {
+    background:lightgreen
+}
+#timeline-web86 .text-input {
+    font-size:18px;
+    width:80%
+}
+#timeline-web86 .color-input {
+    font-size:18px;
+    width:15%
+}
+#timeline-web86 .my-color-picker-web86, #timeline-web86  .wp-picker-container {
+    font-size:18px;
+    height:38px;
+    width:15%;
+}
+
