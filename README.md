@@ -6,5 +6,5 @@ I created a plugin whose task is to create metaboxes for WP posts and pages, in 
 How it works:
 1) To get it works you need to download and install the plugin itself in the usual way. Then, in the WP “settings” menu, find the “Timeline” item and select the posts or/and pages to which you want to link the metabox with the form.
 2) Then go to the editor of the page or post you specified and at the bottom you will see a metabox with the “Add new section” button, you can add as many sections and subsections as you like, for convenience, you can set your own color for each section.
-3) Insert the [timeline_web86] shortcode anywhere on the page in order to show the Timeline block.
+3) Insert the [web86_timeline] shortcode anywhere on the page in order to show the Timeline block.
 Done
