@@ -1,33 +1,37 @@
 <?php
-function web86_shortcode_function()
+if (!defined('ABSPATH'))
+  exit;
+function web86_timeline_shortcode_function()
 {
   $output = '';
   $output_html = '';
 
-  // Получить значение поля из метабокса
+  // return '<div>TEST</div>';
+
+  // Get value from metabox
   $procces_arr = get_post_meta(get_the_ID(), 'web86_field_name', true);
 
-  // Проверить, есть ли значение
+  // check value exists
   if (!empty($procces_arr)) {
 
     $output_html .= '<div class="roadmap gradien-gray wp-block-group"><div style="width:100%">';
 
     foreach ($procces_arr[0] as $razdel) {
-      $output_html .= '<div class="razdel"><h3>' . $razdel['field1'] . '</h3></div><ul class="steps-box">';
+      $output_html .= '<div class="razdel"><h3>' . esc_html($razdel['field1']) . '</h3></div><ul class="steps-box">';
 
       foreach ($razdel['sub_fields'] as $subfield) {
         if (isset($razdel['field2']) && !empty($razdel['field2'])) {
-          $output_html .= '<li style="--accent-color:' . $razdel['field2'] . '">';
+          $output_html .= '<li style="--accent-color:' . esc_html($razdel['field2']) . '">';
         } else {
-          // Если поле field2 отсутствует или пустое, выполнится этот блок кода
+          // if field2 is empty or does not exists, then do
           $output_html .= '<li style="--accent-color:#4795EC">';
         }
-        $output_html .= '<div class="date" >' . $subfield['sub_field_1'] . '</div><div class="title">' . $subfield['sub_field_2'] . '</div><div class="descr subtitle">' . $subfield['sub_field_3'] . '</div><div class="descr last">' . $subfield['sub_field_4'] . '</div></li>';
+        $output_html .= '<div class="date" >' . esc_html($subfield['sub_field_1']) . '</div><div class="title">' . esc_html($subfield['sub_field_2']) . '</div><div class="descr subtitle">' . wp_kses_post($subfield['sub_field_3']) . '</div><div class="descr last">' . wp_kses_post($subfield['sub_field_4']) . '</div></li>';
 
       }
       $output_html .= '</ul>';
     }
-    $output_html .= '<div class="finish">' . $procces_arr[1] . '</div></div></div>';
+    $output_html .= '<div class="finish">' . wp_kses_post($procces_arr[1]) . '</div></div></div>';
     $output_css = '<style>
                 body {
                   --color: rgba(30, 30, 30);
@@ -309,7 +313,7 @@ function web86_shortcode_function()
                     display:flex;
                     counter-increment: my-counter;
                     content: "0"counter(my-counter); 
-                    background:url(' . plugins_url("timeline-web86") . '/images/polygon.svg) no-repeat center center;
+                    background:url(' . plugins_url("/images/polygon.svg", __FILE__) . ') no-repeat center center;
                     background-size:contain;
                     width: 70px;
                     align-items: center;
@@ -334,6 +338,7 @@ function web86_shortcode_function()
       </style>';
     $output = $output_css . $output_html;
   } else {
+
     $output = '<p style="color:red">No timelines found for this article</p>';
   }
 
