@@ -1,0 +1,53 @@
+#web86_timeline .repeatable-fieldset {
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 10px;
+    background: #f1f1f1;
+}
+
+#web86_timeline .mainlabel {
+    font-size: 18px;
+    display: block;
+}
+
+#web86_timeline .subfields-container {
+    background: #ccc;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#web86_timeline .subfield-container {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+#web86_timeline .remove-sub-field-row,
+#web86_timeline .remove-row {
+    background: rgb(252, 146, 146)
+}
+
+#web86_timeline .add-subfield-row,
+#web86_timeline .add-row {
+    background: lightgreen
+}
+
+#web86_timeline .text-input {
+    font-size: 18px;
+    width: 80%
+}
+
+#web86_timeline .color-input {
+    font-size: 18px;
+    width: 15%
+}
+
+#web86_timeline .my-color-picker-web86,
+#web86_timeline .wp-picker-container {
+    font-size: 18px;
+    height: 38px;
+    width: 15%;
+}
