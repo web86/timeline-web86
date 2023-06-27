@@ -334,6 +334,9 @@ function web86_timeline_shortcode_function()
                     padding: 20px 40px;
                     margin-left: 0;
                   }
+                  .roadmap ul.steps-box > li .descr::before {
+                    display:none;
+                  }
                 }
       </style>';
     $output = $output_css . $output_html;
